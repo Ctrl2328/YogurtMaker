@@ -1,9 +1,8 @@
-package com.danieldev87.demo.dto;
+package com.migueljaramillo.demo.dto;
 
 import java.util.List;
 
-import com.danieldev87.demo.domain.model.Recipe;
-
+import com.migueljaramillo.demo.domain.model.Recipe;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

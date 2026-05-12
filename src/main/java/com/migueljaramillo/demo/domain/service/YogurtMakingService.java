@@ -1,4 +1,4 @@
-package com.danieldev87.demo.domain.service;
+package com.migueljaramillo.demo.domain.service;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -6,13 +6,13 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.danieldev87.demo.domain.model.Recipe;
-import com.danieldev87.demo.domain.model.TemperatureLog;
-import com.danieldev87.demo.domain.model.YogurtBatch;
-import com.danieldev87.demo.domain.repository.RecipeRepository;
-import com.danieldev87.demo.domain.repository.TemperatureLogRepository;
-import com.danieldev87.demo.domain.repository.YogurtBatchRepository;
-import com.danieldev87.demo.exception.BusinessException;
+import com.migueljaramillo.demo.domain.model.Recipe;
+import com.migueljaramillo.demo.domain.model.TemperatureLog;
+import com.migueljaramillo.demo.domain.model.YogurtBatch;
+import com.migueljaramillo.demo.domain.repository.RecipeRepository;
+import com.migueljaramillo.demo.domain.repository.TemperatureLogRepository;
+import com.migueljaramillo.demo.domain.repository.YogurtBatchRepository;
+import com.migueljaramillo.demo.exception.BusinessException;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

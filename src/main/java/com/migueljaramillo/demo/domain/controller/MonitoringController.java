@@ -1,4 +1,4 @@
-package com.danieldev87.demo.domain.controller;
+package com.migueljaramillo.demo.domain.controller;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.danieldev87.demo.domain.model.TemperatureLog;
-import com.danieldev87.demo.domain.model.YogurtBatch;
-import com.danieldev87.demo.domain.repository.TemperatureLogRepository;
-import com.danieldev87.demo.domain.repository.YogurtBatchRepository;
-import com.danieldev87.demo.domain.service.TemperatureControlService;
-import com.danieldev87.demo.dto.MonitoringDTO;
+import com.migueljaramillo.demo.domain.model.TemperatureLog;
+import com.migueljaramillo.demo.domain.model.YogurtBatch;
+import com.migueljaramillo.demo.domain.repository.TemperatureLogRepository;
+import com.migueljaramillo.demo.domain.repository.YogurtBatchRepository;
+import com.migueljaramillo.demo.domain.service.TemperatureControlService;
+import com.migueljaramillo.demo.dto.MonitoringDTO;
 
 import lombok.RequiredArgsConstructor;
 

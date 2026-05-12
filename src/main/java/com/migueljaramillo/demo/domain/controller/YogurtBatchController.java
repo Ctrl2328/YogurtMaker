@@ -1,4 +1,4 @@
-package com.danieldev87.demo.domain.controller;
+package com.migueljaramillo.demo.domain.controller;
 
 import java.util.List;
 
@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.danieldev87.demo.domain.model.YogurtBatch;
-import com.danieldev87.demo.domain.service.YogurtMakingService;
-import com.danieldev87.demo.dto.BatchDTO;
-import com.danieldev87.demo.dto.TemperatureRecordDTO;
+import com.migueljaramillo.demo.domain.model.YogurtBatch;
+import com.migueljaramillo.demo.domain.service.YogurtMakingService;
+import com.migueljaramillo.demo.dto.BatchDTO;
+import com.migueljaramillo.demo.dto.TemperatureRecordDTO;
 
 import lombok.RequiredArgsConstructor;
 

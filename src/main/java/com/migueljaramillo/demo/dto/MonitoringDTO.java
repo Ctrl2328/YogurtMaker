@@ -1,4 +1,4 @@
-package com.danieldev87.demo.dto;
+package com.migueljaramillo.demo.dto;
 
 import java.util.Map;
 

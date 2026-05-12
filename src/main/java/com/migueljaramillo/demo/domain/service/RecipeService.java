@@ -1,15 +1,14 @@
-package com.danieldev87.demo.domain.service;
+package com.migueljaramillo.demo.domain.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.danieldev87.demo.domain.model.Ingredient;
-import com.danieldev87.demo.domain.model.Recipe;
-import com.danieldev87.demo.domain.repository.RecipeRepository;
-import com.danieldev87.demo.dto.RecipeDTO;
-
-import com.danieldev87.demo.exception.BusinessException;
+import com.migueljaramillo.demo.domain.model.Ingredient;
+import com.migueljaramillo.demo.domain.model.Recipe;
+import com.migueljaramillo.demo.domain.repository.RecipeRepository;
+import com.migueljaramillo.demo.dto.RecipeDTO;
+import com.migueljaramillo.demo.exception.BusinessException;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

@@ -1,13 +1,13 @@
-package com.danieldev87.demo.domain.service;
+package com.migueljaramillo.demo.domain.service;
 
 import java.time.LocalDateTime;
 import java.util.Random;
 
 import org.springframework.stereotype.Service;
 
-import com.danieldev87.demo.domain.model.TemperatureLog;
-import com.danieldev87.demo.domain.model.YogurtBatch;
-import com.danieldev87.demo.domain.repository.TemperatureLogRepository;
+import com.migueljaramillo.demo.domain.model.TemperatureLog;
+import com.migueljaramillo.demo.domain.model.YogurtBatch;
+import com.migueljaramillo.demo.domain.repository.TemperatureLogRepository;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

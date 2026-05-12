@@ -1,4 +1,4 @@
-package com.danieldev87.demo.domain.repository;
+package com.migueljaramillo.demo.domain.repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.danieldev87.demo.domain.model.Recipe;
+import com.migueljaramillo.demo.domain.model.Recipe;
 
 @Repository
 public interface RecipeRepository extends JpaRepository<Recipe, Long> {

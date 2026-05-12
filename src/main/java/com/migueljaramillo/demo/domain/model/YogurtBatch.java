@@ -1,4 +1,4 @@
-package com.danieldev87.demo.domain.model;
+package com.migueljaramillo.demo.domain.model;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.danieldev87.demo.domain.repository;
+package com.migueljaramillo.demo.domain.repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.danieldev87.demo.domain.model.YogurtBatch;
-import com.danieldev87.demo.domain.model.YogurtBatch.BatchStatus;
+import com.migueljaramillo.demo.domain.model.YogurtBatch;
+import com.migueljaramillo.demo.domain.model.YogurtBatch.BatchStatus;
 
 @Repository
 public interface YogurtBatchRepository extends JpaRepository<YogurtBatch, Long> {

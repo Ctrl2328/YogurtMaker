@@ -1,6 +1,6 @@
-package com.danieldev87.demo.dto;
+package com.migueljaramillo.demo.dto;
 
-import com.danieldev87.demo.domain.model.TemperatureLog;
+import com.migueljaramillo.demo.domain.model.TemperatureLog;
 
 import lombok.Data;
 

@@ -51,7 +51,6 @@ public class RecipeService {
                     .name(ingredientDTO.getName())
                     .quantity(ingredientDTO.getQuantity())
                     .unit(ingredientDTO.getUnit())
-                    .notes(ingredientDTO.getNotes())
                     .optional(ingredientDTO.getOptional())
                     .recipe(recipe)
                     .build();
@@ -91,7 +90,6 @@ public class RecipeService {
                     .name(ingredientDTO.getName())
                     .quantity(ingredientDTO.getQuantity())
                     .unit(ingredientDTO.getUnit())
-                    .notes(ingredientDTO.getNotes())
                     .optional(ingredientDTO.getOptional())
                     .recipe(recipe)
                     .build();

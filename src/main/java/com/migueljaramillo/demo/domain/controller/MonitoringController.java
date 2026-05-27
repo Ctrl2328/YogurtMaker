@@ -7,11 +7,13 @@ import java.util.Map;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 import com.migueljaramillo.demo.domain.model.TemperatureLog;
 import com.migueljaramillo.demo.domain.model.YogurtBatch;
@@ -25,12 +27,15 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/api/monitoring")
 @RequiredArgsConstructor
+@Tag(name = "3. Panel de Monitoreo", description = "Endpoints para la supervisión de alertas, auditorías térmicas y métricas globales del sistema")
 public class MonitoringController {
     
     private final YogurtBatchRepository batchRepository;
     private final TemperatureLogRepository temperatureLogRepository;
     private final TemperatureControlService temperatureControlService;
     
+    @Operation(summary = "Obtener lotes en proceso activo", description = "Filtra y retorna una lista con todos los lotes de yogurt que están actualmente calentándose, incubándose o refrigerándose.")
+    @ApiResponse(responseCode = "200", description = "Lista de lotes activos obtenida correctamente")
     @GetMapping("/batches/active")
     public ResponseEntity<List<YogurtBatch>> getActiveBatches() {
         List<YogurtBatch> activeBatches = batchRepository.findByStatus(YogurtBatch.BatchStatus.INCUBATING);
@@ -40,6 +45,11 @@ public class MonitoringController {
         return ResponseEntity.ok(activeBatches);
     }
     
+    @Operation(summary = "Resumen de temperatura de un lote", description = "Calcula el estado térmico actual, máximos, mínimos y el promedio histórico de incubación para un lote específico.")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Resumen estadístico calculado exitosamente"),
+        @ApiResponse(responseCode = "404", description = "Lote solicitado no encontrado en el sistema", content = @Content)
+    })
     @GetMapping("/batches/{batchId}/temperature")
     public ResponseEntity<MonitoringDTO.TemperatureSummary> getBatchTemperatureSummary(@PathVariable Long batchId) {
         Double currentTemp = temperatureControlService.getCurrentTemperature(batchId);
@@ -58,6 +68,11 @@ public class MonitoringController {
         return ResponseEntity.ok(summary);
     }
     
+    @Operation(summary = "Historial de bitácora térmica", description = "Retorna el registro detallado de los logs de temperatura de un lote. Permite filtrado opcional mediante un rango de fechas.")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Historial térmico extraído de forma correcta"),
+        @ApiResponse(responseCode = "404", description = "Lote no existente", content = @Content)
+    })
     @GetMapping("/batches/{batchId}/temperature-logs")
     public ResponseEntity<List<TemperatureLog>> getTemperatureLogs(
             @PathVariable Long batchId,
@@ -72,6 +87,8 @@ public class MonitoringController {
         return ResponseEntity.ok(temperatureLogRepository.findByBatch(batch));
     }
     
+    @Operation(summary = "Métricas generales del Dashboard", description = "Genera el estado cuantitativo de la planta de producción, distribuyendo los lotes según su estado actual.")
+    @ApiResponse(responseCode = "200", description = "Estadísticas globales consolidadas con éxito")
     @GetMapping("/dashboard")
     public ResponseEntity<MonitoringDTO.Dashboard> getDashboard() {
         long preparingCount = batchRepository.countByStatus(YogurtBatch.BatchStatus.PREPARING);

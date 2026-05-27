@@ -3,6 +3,7 @@ package com.migueljaramillo.demo.domain.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,6 +27,7 @@ public class Recipe {
     
     private String description;
     
+    @JsonIgnoreProperties("recipe")
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
     @Builder.Default
     private List<Ingredient> ingredients = new ArrayList<>();
@@ -70,4 +72,3 @@ public class Recipe {
         BEGINNER, INTERMEDIATE, ADVANCED
     }
 }
-
